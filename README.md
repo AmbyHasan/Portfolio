@@ -1,36 +1,81 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+Portfolio Website – Next.js
+A modern, responsive personal portfolio website built using Next.js (App Router).
+This portfolio showcases my projects, skills, and contact information with a clean UI and smooth navigation.
 
-## Getting Started
+Tech Stack
+Next.js 13+ (App Router)
+React
+Tailwind CSS
+JavaScript (ES6+)
+Vercel (Deployment)
 
-First, run the development server:
+Features
+Responsive design for all screen sizes
+Smooth section-based navigation
+Modular and reusable components
+Optimized performance with Next.js
+SEO-friendly structure
+Contact section with API route support
 
-```bash
+📁 Project Structure
+portfolio-website/
+│
+├── node_modules/
+│
+├── public/
+│   ├── github-icon.svg
+│   ├── linkedin-icon.svg
+│   └── other-static-assets
+│
+├── src/
+│   ├── api/
+│   │   └── send/
+│   │       └── route.js
+│   │
+│   ├── app/
+│   │   ├── favicon.ico
+│   │   ├── globals.css
+│   │   ├── layout.js
+│   │   └── page.js
+│   │
+│   ├── components/
+│   │   ├── AboutMeSection.jsx
+│   │   ├── EmailSection.jsx
+│   │   ├── Footer.jsx
+│   │   ├── HeroSection.jsx
+│   │   ├── MenuCard.jsx
+│   │   ├── Navbar.jsx
+│   │   ├── NavLink.jsx
+│   │   ├── ProjectCard.jsx
+│   │   ├── ProjectSection.jsx
+│   │   └── TabButton.jsx
+│
+├── .env
+├── .gitignore
+├── package.json
+├── package-lock.json
+└── README.md
+
+
+
+Folder Explanation
+public/ - Contains static assets like SVG icons and images.
+src/app/ - Uses Next.js App Router:
+layout.js - Root layout
+page.js - Home page
+globals.css - Global styles
+src/components/ - Reusable UI components for different sections of the portfolio.
+src/api/send/route.js - API route for handling contact/email functionality.
+
+Installation & Setup
+git clone https://github.com/your-username/portfolio-website.git
+cd portfolio-website
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open - http://localhost:3000
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Deployment
+This project is deployed on Vercel.
+npm run build
+npm start
