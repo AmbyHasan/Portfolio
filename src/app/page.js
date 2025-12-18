@@ -1,5 +1,7 @@
 "use client"
 import AboutMeSection from "@/components/AboutMeSection";
+import EmailSection from "@/components/EmailSection";
+import Footer from "@/components/Footer";
 import HeroSection from "@/components/HeroSection";
 import Navbar from "@/components/Navbar";
 import ProjectSection from "@/components/ProjectSection";
@@ -10,9 +12,17 @@ export default function Home() {
       <Navbar/>
     <div className="container mx-auto px-12 py-4">
    <HeroSection/>
-   <AboutMeSection/>
-   <ProjectSection/>
+  <section id="about" className="scroll-mt-24">
+  <AboutMeSection />
+</section>
+   <section id="projects" className="scroll-mt-24">
+  <ProjectSection />
+</section>
+   <section id="contact" className="scroll-mt-24">
+  <EmailSection />
+</section>
    </div>  
+   <Footer/>
     </div>
   );
 }

@@ -13,18 +13,18 @@ const HeroSection = () => {
       <div className="col-span-7 place-self-center text-center sm:text-left">
         <h1 className="mb-4 text-4xl lg:text-6xl font-extrabold tracking-tight leading-tight sm:text-5xl">
           <span className="text-white">Hello, I&apos;m </span><br/>
-          <span className="bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">
+          <span className="bg-linear-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">
            
 
     <TypeAnimation
       sequence={[
         // Same substring at the start will only be typed out once, initially
         "Amber Hasan |" ,
-        2000, // wait 1s before replacing "Mice" with "Hamsters"
+        1000, // wait 1s before replacing "Mice" with "Hamsters"
         "Full Stack Developer |",
-        2000,
+        1000,
         "Problem Solver |" ,
-         2000,
+         1000,
        
       
       ]}
@@ -43,18 +43,21 @@ const HeroSection = () => {
           modern tech stacks.
         </p>
         <div>
-            <button className="px-6 py-3  w-full rounded-full mr-4 hover:bg-slate-300 text-white sm:w-fit bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500">Hire Me</button>
-            <button className="px-1 py-3 w-full rounded-full mr-4  text-white mt-3 sm:w-fit bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500">
-                <span className="bg-[#121212] hover:bg-slate-800 w-full rounded-full px-7 py-3  ">Download Resume</span>
-                </button>
+            <button className="px-6 py-3 w-full rounded-full mr-4 hover:bg-slate-300 text-white sm:w-fit bg-linear-to-br from-blue-500 via-purple-500 to-pink-500 suppressHydrationWarning">Hire Me</button>
+           <a href="/AmberHasanResume.pdf" download target="_blank" rel="noopener noreferrer">
+  <button
+    className="px-1 py-1 rounded-full bg-linear-to-br from-blue-500 via-purple-500 to-pink-500 hover:scale-105 transition">
+    <span className="block bg-[#121212] hover:bg-slate-800 rounded-full px-7 py-3 text-white">
+      Download Resume
+    </span>
+  </button>
+</a>
         </div>
       </div>
 
       {/* Right Image */}
       <div className="col-span-5 flex justify-center items-center place-self-center mt-6 lg:mt-4">
-               <div className="relative w-[250px] h-[250px] lg:w-[300px] lg:h-[440px] rounded-3xl 
-                             overflow-hidden border-5 border-white hidden md:block
-                          ">
+               <div className="relative w-62.5 h-62.5 lg:w-75 lg:h-110 rounded-3xl overflow-hidden border-5 border-white hidden md:block">
 
           <Image
             src="/my_formals_photo.jpg"
@@ -63,6 +66,7 @@ const HeroSection = () => {
             height={300}
             className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 object-cover "
             priority
+
           />
         </div>
       </div>

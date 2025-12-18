@@ -172,7 +172,7 @@ const handleTabChange=(id)=>{
     <div className="text-white ">
       <div className="md:grid md:grid-cols-2 gap-8 items-center py-8 px-1 xl:gap-16 sm:py-16 xl:px-16">
         <Image
-        src="/AboutMe.png" width={500} height={500}
+        src="/AboutMe.png" width={500} height={500} alt="me"
         className="rounded-2xl "
         />
         <div className="mt-4 md:mt-0 text-left flex flex-col h-full">
