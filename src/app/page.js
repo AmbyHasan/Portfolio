@@ -2,6 +2,7 @@
 import AboutMeSection from "@/components/AboutMeSection";
 import HeroSection from "@/components/HeroSection";
 import Navbar from "@/components/Navbar";
+import ProjectSection from "@/components/ProjectSection";
 
 export default function Home() {
   return (
@@ -10,6 +11,7 @@ export default function Home() {
     <div className="container mx-auto px-12 py-4">
    <HeroSection/>
    <AboutMeSection/>
+   <ProjectSection/>
    </div>  
     </div>
   );
