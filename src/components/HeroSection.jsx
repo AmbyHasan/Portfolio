@@ -42,12 +42,12 @@ const HeroSection = () => {
           experienced in building scalable web applications and AI-powered products using
           modern tech stacks.
         </p>
-        <div>
-            <button className="px-6 py-3 w-full rounded-full mr-4 hover:bg-slate-300 text-white sm:w-fit bg-linear-to-br from-blue-500 via-purple-500 to-pink-500 suppressHydrationWarning">Hire Me</button>
+        <div >
+            <button className="px-10 py-4 w-full rounded-full mr-4 mb-2 hover:bg-slate-300 text-white sm:w-fit bg-linear-to-br from-blue-500 via-purple-500 to-pink-500 suppressHydrationWarning ">Hire Me</button>
            <a href="/AmberHasanResume.pdf" download target="_blank" rel="noopener noreferrer">
   <button
-    className="px-1 py-1 rounded-full bg-linear-to-br from-blue-500 via-purple-500 to-pink-500 hover:scale-105 transition">
-    <span className="block bg-[#121212] hover:bg-slate-800 rounded-full px-7 py-3 text-white">
+    className="px-1 py-1 sm:w-fit w-full rounded-full bg-linear-to-br from-blue-500 via-purple-500 to-pink-500 hover:scale-105 transition ">
+    <span className="block bg-[#121212] hover:bg-slate-800 rounded-full px-7 py-3 text-white ">
       Download Resume
     </span>
   </button>

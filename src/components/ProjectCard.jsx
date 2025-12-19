@@ -3,10 +3,10 @@ import Link from 'next/link'
 
 const ProjectCard = ({imgUrl , title , description ,url}) => {
   return (
-    <div className="bg-black backdrop-blur-lg p-3 rounded-xl hover:-translate-y-2 hover:shadow-[0_0_25px_rgba(236,72,153,0.3)] transition-all duration-300 ">
+    <div className="bg-black backdrop-blur-lg p-3 rounded-xl hover:-translate-y-2 active:-translate-y-2 hover:shadow-[0_0_25px_rgba(236,72,153,0.3)] transition-all duration-300 ">
       <div className="h-52 mb-2 md:h-72 rounded-t-xl relative group bg-white" style={{background: `url(${imgUrl})` , backgroundSize:"cover"}}>
-      <div className=" items-center justify-center overlay absolute top-0 left-0 w-full h-full bg-[#181818] bg-opacity-0 hidden group-hover:flex group-hover:bg-[rgba(18,18,18,0.7)] group-hover:backdrop-blur transition-all duration-500   ">
-       <Link href={url} className="h-14 w-14 relative  rounded-full border-2 border-[#ADB7BE] hover:border-white flex items-center justify-center">
+      <div className="items-center justify-center overlay absolute top-0 left-0 w-full h-full bg-[#181818] bg-opacity-0 hidden group-hover:flex group-hover:bg-[rgba(18,18,18,0.7)] group-active:flex group-active:bg-[rgba(18,18,18,0.7)] group-hover:backdrop-blur group-active:backdrop-blur transition-all duration-500   ">
+       <Link href={url} className="h-14 w-14 relative rounded-full border-2 border-[#ADB7BE] hover:border-white active:border-white flex items-center justify-center">
 
        {/* code bracket icon */}
        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-7">
