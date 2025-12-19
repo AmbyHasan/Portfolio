@@ -169,7 +169,7 @@ const handleTabChange=(id)=>{
   return (
 
     // ABOUT ME
-    <div className="text-white ">
+    <div className="text-white min-h-screen ">
       <div className="md:grid md:grid-cols-2 gap-8 items-center py-8 px-1 xl:gap-16 sm:py-16 xl:px-16">
         <Image
         src="/AboutMe.png" width={500} height={500} alt="me"
@@ -183,14 +183,14 @@ const handleTabChange=(id)=>{
 </p>
    
  {/* TAB Headings */}
- <div className="flex flex-row justify-start mt-8">
+ <div className="flex flex-row justify-start mt-8 ">
     <TabButton selectTab={()=> handleTabChange("skills")} active = {tab === "skills"}>{" "}Skills{" "}</TabButton>
     <TabButton selectTab={()=> handleTabChange("education")} active = {tab === "education"}>{" "}Education{" "}</TabButton>
     <TabButton selectTab={()=> handleTabChange("certifications")} active = {tab === "certifications"}>{" "}Certifications{" "}</TabButton>
    </div>
 
  {/* displaying the tab content */}
-<div className="mt-8">{TAB_DATA.find((t)=> t.id===tab).content}</div>
+<div className="mt-8 min-h-80 transition-all duration-300">{TAB_DATA.find((t)=> t.id===tab).content}</div>
 
 
 

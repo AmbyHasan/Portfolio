@@ -7,9 +7,7 @@ import Image from "next/image";
 
 const EmailSection = () => {
  
-  function func(){
-    alert("Email sent");
-  }
+ 
 
 
    
@@ -92,8 +90,8 @@ const EmailSection = () => {
                 placeholder="Let's talk about..."/>
             </div>
             <button
-              
-              onClick={func}
+              type="submit"
+             
               className="px-6 py-4 w-full rounded-full text-white  bg-linear-to-br from-blue-500 via-purple-500 to-pink-500 hover:bg-slate-600"
             >
               Send Message
