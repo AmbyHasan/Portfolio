@@ -67,7 +67,7 @@ const TAB_DATA=[
         — Hudson Memorial Girls Inter College  
         <br />
         <span className="text-sm text-gray-400">
-          2020 – 2022 | Percentage: 80%
+          2021 – 2022 | Percentage: 80%
         </span>
       </li>
 
@@ -78,7 +78,7 @@ const TAB_DATA=[
         — Hudson Memorial Girls Inter College  
         <br />
         <span className="text-sm text-gray-400">
-          Percentage: 84.6%
+          2019 – 2020 | Percentage: 84.6%
         </span>
       </li>
     </ul>
@@ -179,7 +179,7 @@ const handleTabChange=(id)=>{
         <h2  className="text-4xl font-bold bg-linear-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent mb-4">About Me</h2>
       <p className="text-base sm:p-0">I am a Computer Science and Engineering student at Pranveer Singh Institute of Technology (PSIT), Kanpur, with strong foundations in Data Structures and Algorithms and hands-on experience in full-stack web development. I enjoy building scalable, user-focused applications using modern technologies.
 </p>
-<br/> <p>I have solved 1000+ problems on LeetCode, which has strengthened my problem-solving skills and ability to write efficient, maintainable code. I am a continuous learner and am actively seeking opportunities to contribute to real-world projects and grow as an engineer.
+<br/> <p>I have solved <span className="font-bold text-purple-400"> 1000+ problems </span> on LeetCode, which has strengthened my problem-solving skills and ability to write efficient, maintainable code. I am a continuous learner and am actively seeking opportunities to contribute to real-world projects and grow as an engineer.
 </p>
    
  {/* TAB Headings */}

@@ -10,6 +10,7 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@formspree/react": "^3.0.0",
     "@heroicons/react": "^2.2.0",
     "fs": "^0.0.1-security",
     "groq-sdk": "^0.37.0",

@@ -22,7 +22,7 @@ export async function POST(req) {
 
     // 🔹 Groq Chat Completion
     const completion = await groq.chat.completions.create({
-      model: "llama-3.1-8b-instant", // ✅ supported model
+      model: "llama-3.1-8b-instant",
       temperature: 0.2,
       messages: [
         {
@@ -32,8 +32,9 @@ You are Amber Hasan's portfolio assistant.
 
 Rules:
 - Answer ONLY using the resume content below.
-- If the answer is not present, say:
-  "Sorry , I don't have any idea about that."
+- If the answer is not present in the resume  , then answer the question by youself only if the question is relevant otherwise say,
+"Sorry , i do not have any idea about that."
+  
 - Be concise, professional, and friendly.
 
 Resume:

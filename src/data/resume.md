@@ -1,9 +1,14 @@
 # Amber Hasan
 
-Kanpur, Uttar Pradesh, India  
-Email | LinkedIn | GitHub | LeetCode | Portfolio
+Address -> Kanpur, Uttar Pradesh, India  
+Email - -> amberhasan237@gmail.com
+Mother's Name - Mrs. Kamna Raja
+Father's Name - Mr. Raja Hasan
 
 ---
+
+## Coding
+Amber Hasan has solved 1000+ problems at leetcode
 
 ## Career Summary
 

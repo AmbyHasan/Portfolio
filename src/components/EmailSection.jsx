@@ -1,13 +1,20 @@
 "use client";
 import React, { useState } from "react";
+import { useForm, ValidationError } from "@formspree/react";
 
 import Link from "next/link";
 import Image from "next/image";
 
 
+
+
 const EmailSection = () => {
  
- 
+   const [state, handleSubmit] = useForm("xvzpylkw");
+  
+  // if (state.succeeded) {
+  //   return <p className="text-green-400">Thanks for reaching out! 💜</p>;
+  // }
 
 
    
@@ -44,7 +51,9 @@ const EmailSection = () => {
       <div>
       
       
-          <form className="flex flex-col" >
+          <form 
+            onSubmit={handleSubmit}
+            className="flex flex-col" >
             <div className="mb-6">
               <label
                 htmlFor="email"
@@ -72,6 +81,7 @@ const EmailSection = () => {
                 name="subject"
                 type="text"
                 id="subject"
+                  
                 required
                 className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
                 placeholder="Just saying hi"/>
@@ -86,21 +96,29 @@ const EmailSection = () => {
               <textarea
                 name="message"
                 id="message"
+           
                 className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
                 placeholder="Let's talk about..."/>
+                 <ValidationError prefix="Message" field="message" errors={state.errors} />
             </div>
+
             <button
               type="submit"
-             
+              disabled={state.submitting}
               className="px-6 py-4 w-full rounded-full text-white  bg-linear-to-br from-blue-500 via-purple-500 to-pink-500 hover:bg-slate-600"
             >
-              Send Message
+               {state.submitting ? "Sending..." : "Send Message"}
             </button>
 
 
           </form>
         
       </div>
+
+      { 
+        state.succeeded && <p className="text-green-400">Thanks for reaching out! 💜</p> 
+      }
+
     </section>
   );
 };
