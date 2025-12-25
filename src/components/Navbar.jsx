@@ -13,6 +13,11 @@ const navLinks=[
         title:"About" ,
         path:"#about"
     } ,
+     {
+        title:"Problem Solving",
+        path: "#programming"
+    } ,
+    
     {
         title:"Projects" ,
         path:"#projects"
@@ -22,6 +27,7 @@ const navLinks=[
         path:"#contact"
 
     } ,
+   
 ]
 const Navbar = () => {
      const [navbarOpen , setNavbarOpen]=useState(false);
