@@ -4,6 +4,7 @@ import Image from 'next/image'
 import StatCard from './StatCard'
 import { useState , useEffect } from 'react'
 import StatCard2 from './StatCard2'
+import Link from 'next/link'
 
 
 
@@ -43,10 +44,20 @@ const ProgrammingSection = () => {
       <p className="text-base sm:p-0">
         I actively practice competitive programming on LeetCode with a strong focus on data structures, algorithms, and problem-solving consistency. Through disciplined practice and continuous learning, I have achieved the <span className="text-purple-500 font-bold">Knight</span> level on LeetCode.
       </p>
-       <h2 className="mt-4 text-3xl font-bold text-pink-500">Problem Stats From  Leetcode</h2>
+      <div className=" mt-4 flex items-center justify-center">
+       <h2 className=" text-3xl font-bold text-pink-500">Problem Stats From  Leetcode</h2>
+
+            <Link href="https://leetcode.com/u/AmberHasan/">
+                  <div className="bg-white rounded-sm p-1 ml-2">
+                   <Image src="/leetcode-icon.png" width={24} height={24}  alt="Leetcode Icon" />
+                   </div>
+                 </Link>
+      </div>
+       
+
 <section className="mt-5">
     {loading ? (
-<p className="text-xl font-bold text-green-700">Loading the stats</p>
+<p className="text-xl font-bold text-green-700">Loading the stats from Leetcode</p>
     ) : (
 
        <div>
@@ -60,10 +71,10 @@ const ProgrammingSection = () => {
   } value={stats.totalSolved} />
 
 
-        <div className=" sm:flex sm:justify-between">
-        <StatCard title="Easy" value={stats.easySolved} />
-        <StatCard title="Medium" value={stats.mediumSolved} />
-        <StatCard title="Hard" value={stats.hardSolved} />
+        <div className="sm:flex sm:justify-between">
+        <StatCard title="Easy" value={stats.easySolved} className="text-blue-500" />
+        <StatCard title="Medium" value={stats.mediumSolved} className="text-yellow-400"  />
+        <StatCard title="Hard" value={stats.hardSolved} className="text-red-600"/>
         </div>
         <StatCard2 title="Global Ranking" value={stats.ranking}/>
      </div>

@@ -41,11 +41,19 @@ const EmailSection = () => {
             <Image src="/github-icon.svg" width={24} height={24} alt="Github Icon" />
             </div>
           </Link>
+
           <Link href="https://www.linkedin.com/in/amber-hasan-b280b61b9/">
-           <div className="bg-white rounded-sm ">
+           <div className="bg-white rounded-sm mr-4 ">
             <Image src="/linkedin-icon.svg" width={24} height={24}  alt="Linkedin Icon" />
             </div>
           </Link>
+
+            <Link href="https://leetcode.com/u/AmberHasan/">
+           <div className="bg-white rounded-sm ">
+            <Image src="/leetcode-icon.png" width={24} height={24}  alt="Leetcode Icon" />
+            </div>
+          </Link>
+
         </div>
       </div>
       <div>

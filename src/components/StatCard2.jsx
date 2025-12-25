@@ -1,5 +1,5 @@
 
-export default function StatCard2({ title, value, fullWidth = false }) {
+export default function StatCard2({ title, value, fullWidth = false  }) {
   return (
     <div
       className={`

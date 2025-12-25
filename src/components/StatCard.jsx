@@ -1,5 +1,5 @@
 
-export default function StatCard({ title, value, fullWidth = false }) {
+export default function StatCard({ title, value, fullWidth = false  , className="" }) {
   return (
     <div
       className={`
@@ -12,6 +12,7 @@ export default function StatCard({ title, value, fullWidth = false }) {
         hover:-translate-y-2 hover:scale-[1.02]
         hover:shadow-[0_0_35px_rgba(236,72,153,0.7)]
         mt-3
+      
       `}
       
     >
@@ -22,7 +23,7 @@ export default function StatCard({ title, value, fullWidth = false }) {
 
       {/* Content */}
       <div className="relative  flex flex-col items-center justify-center h-full p-10">
-        <p className="text-sm font-medium text-yellow-400 tracking-wide">
+        <p className={`text-sm font-bold ${className} tracking-wide`}>
           {title}
         </p>
         <h2 className="mt-2 text-4xl font-extrabold text-green-400">
