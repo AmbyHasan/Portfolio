@@ -34,13 +34,14 @@ const Navbar = () => {
      const [navbarOpen , setNavbarOpen]=useState(false);
   return (
    
-    <motion.nav 
-      className="sticky top-0 z-10 bg-[rgba(18,18,18,0.5)] backdrop-blur"
+        <motion.nav 
+            className="sticky top-0 z-50 w-full bg-[rgba(18,18,18,0.5)] backdrop-blur"
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5 }}
     >
-        <div className="flex flex-wrap items-center justify-between mx-auto p-5 ">
+                <div className="mx-auto w-full max-w-screen-xl px-4 sm:px-6 lg:px-12">
+                    <div className="flex flex-wrap items-center justify-between py-4">
             {/* LOGO */}
      <div className="w-10 h-10 flex items-center justify-center rounded-lg bg-linear-to-r from-purple-400 to-pink-500 text-white font-bold">
   AH
@@ -76,7 +77,8 @@ const Navbar = () => {
         }
     </ul>
 </div>
-</div>
+                    </div>
+                </div>
 {navbarOpen ? <MenuCard links={navLinks}/> :null}
     </motion.nav>
   );

@@ -10,9 +10,9 @@ import ProgrammingSection from "@/components/ProgrammingSection";
 export default function Home() {
   return (
 
-    <div className="flex min-h-screen flex-col bg-[#121212] container sm:mx-auto lg:px-12 py-4 w-full  ">
+    <div className="flex min-h-screen flex-col bg-[#121212] w-full">
       <Navbar/>
-    <div className="lg:container mx-auto px-12 py-4  ">
+    <div className="mx-auto w-full max-w-screen-xl px-4 sm:px-6 lg:px-12 py-4">
    <HeroSection/>
 
   <section id="about" className="scroll-mt-24">
@@ -36,7 +36,9 @@ export default function Home() {
 </section>
 
    </div>  
-   <Footer/>
+   <div className="mx-auto w-full max-w-screen-xl px-4 sm:px-6 lg:px-12">
+     <Footer/>
+   </div>
     </div>
   );
 }
