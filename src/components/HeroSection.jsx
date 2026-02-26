@@ -26,7 +26,7 @@ const HeroSection = () => {
         >
           <span className="text-white">Hello, I&apos;m </span>
           <br className="sm:hidden" />
-          <span className="bg-linear-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent inline-block min-w-70 sm:min-w-100 lg:min-w-155">
+          <span className="bg-linear-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent inline-block min-w-70 sm:min-w-100 lg:min-w-140">
            
 
     <TypeAnimation
