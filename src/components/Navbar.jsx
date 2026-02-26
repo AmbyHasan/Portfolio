@@ -4,6 +4,7 @@ import React from "react";
 import NavLink from "./NavLink";
 import { useState } from "react";
 import MenuCard from "./MenuCard";
+import { motion } from 'framer-motion';
 
 
 
@@ -33,7 +34,12 @@ const Navbar = () => {
      const [navbarOpen , setNavbarOpen]=useState(false);
   return (
    
-    <nav className="sticky top-0 z-10 bg-[rgba(18,18,18,0.5)] backdrop-blur">
+    <motion.nav 
+      className="sticky top-0 z-10 bg-[rgba(18,18,18,0.5)] backdrop-blur"
+      initial={{ y: -100, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.5 }}
+    >
         <div className="flex flex-wrap items-center justify-between mx-auto p-5 ">
             {/* LOGO */}
      <div className="w-10 h-10 flex items-center justify-center rounded-lg bg-linear-to-r from-purple-400 to-pink-500 text-white font-bold">
@@ -72,7 +78,7 @@ const Navbar = () => {
 </div>
 </div>
 {navbarOpen ? <MenuCard links={navLinks}/> :null}
-    </nav>
+    </motion.nav>
   );
 };
 

@@ -1,5 +1,7 @@
-import React from 'react'
+"use client"
+import React, { useRef } from 'react'
 import ProjectCard from './ProjectCard'
+import { motion, useInView } from 'framer-motion'
 
 
 //data for the project cards
@@ -64,13 +66,37 @@ const projectsData=[
 ]
 
 const ProjectSection = () => {
-  return (
-    <div>
-        <div className="text-center text-4xl font-bold mt-4 mb-8 md:mb-12 bg-linear-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">My Projects</div>
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
 
-        <div className="grid md:grid-cols-2 gap-8 md:gap-12">
-            {projectsData.map((project)=> <ProjectCard key={project.id} title={project.title} description={project.description} imgUrl={project.image} url={project.url}></ProjectCard>)}
-        </div>
+  return (
+    <div ref={ref}>
+        <motion.div 
+          className="text-center text-4xl font-bold mt-4 mb-8 md:mb-12 bg-linear-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent"
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+          transition={{ duration: 0.5 }}
+        >
+          My Projects
+        </motion.div>
+
+        <motion.div 
+          className="grid md:grid-cols-2 gap-8 md:gap-12"
+          initial={{ opacity: 0 }}
+          animate={isInView ? { opacity: 1 } : { opacity: 0 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+        >
+            {projectsData.map((project, index)=> (
+              <motion.div
+                key={project.id}
+                initial={{ opacity: 0, y: 20 }}
+                animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                transition={{ duration: 0.5, delay: 0.1 * index }}
+              >
+                <ProjectCard title={project.title} description={project.description} imgUrl={project.image} url={project.url} />
+              </motion.div>
+            ))}
+        </motion.div>
       
     </div>
   )

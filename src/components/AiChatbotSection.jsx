@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-
+import { motion } from 'framer-motion';
 import React from 'react'
 
 const AiChatbotSection = () => {
@@ -32,21 +32,32 @@ const AiChatbotSection = () => {
   return (
     <>
       {/* Floating Button */}
-      <button
+      <motion.button
         onClick={() => setOpen(!open)}
         className="fixed bottom-6 right-6 w-14 h-14 rounded-full
         bg-linear-to-r from-purple-500 to-pink-500
         shadow-[0_0_25px_rgba(168,85,247,0.7)]
         text-white text-xl z-50"
+        initial={{ scale: 0, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        transition={{ duration: 0.5, delay: 1 }}
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.95 }}
       >
         🤖
-      </button>
+      </motion.button>
 
       {open && (
-        <div className="fixed bottom-24 right-6 w-80 h-[420px]
-        bg-[#0b0d12] border border-gray-700 rounded-xl
-        shadow-[0_0_40px_rgba(168,85,247,0.3)]
-        flex flex-col z-50">
+        <motion.div 
+          className="fixed bottom-24 right-6 w-80 h-[420px]
+          bg-[#0b0d12] border border-gray-700 rounded-xl
+          shadow-[0_0_40px_rgba(168,85,247,0.3)]
+          flex flex-col z-50"
+          initial={{ scale: 0, opacity: 0, y: 20 }}
+          animate={{ scale: 1, opacity: 1, y: 0 }}
+          exit={{ scale: 0, opacity: 0, y: 20 }}
+          transition={{ duration: 0.3 }}
+        >
 
           <div className="p-4 border-b border-gray-700 text-purple-400 font-semibold">
             Ask about Amber
@@ -108,7 +119,7 @@ const AiChatbotSection = () => {
     </svg>
   </button>
 </div>
-        </div>
+        </motion.div>
       )}
     </>
   );

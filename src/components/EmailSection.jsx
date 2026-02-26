@@ -1,7 +1,7 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { useForm, ValidationError } from "@formspree/react";
-
+import { motion, useInView } from 'framer-motion';
 import Link from "next/link";
 import Image from "next/image";
 
@@ -11,21 +11,35 @@ import Image from "next/image";
 const EmailSection = () => {
  
    const [state, handleSubmit] = useForm("xvzpylkw");
+   const ref = useRef(null);
+   const isInView = useInView(ref, { once: true, margin: "-100px" });
+   const formRef = useRef(null);
+
+   // Reset form after successful submission
+   useEffect(() => {
+     if (state.succeeded) {
+       formRef.current?.reset();
+     }
+   }, [state.succeeded]);
   
-  // if (state.succeeded) {
-  //   return <p className="text-green-400">Thanks for reaching out! 💜</p>;
-  // }
+
 
 
    
   return (
     <section
+      ref={ref}
       id="contact"
       className="grid md:grid-cols-2 my-12 md:my-12 py-24 gap-4 relative"
     >
      <div className=" absolute top-3/4 -left-4 h-80 w-80 rounded-full bg-[radial-gradient(ellipse_at_center,rgba(168,85,247,0.6),transparent_70%)]  blur-2xl -translate-x-2   -translate-y-1/2   z-0 "
 ></div>
-      <div className="z-10">
+      <motion.div 
+        className="z-10"
+        initial={{ opacity: 0, x: -50 }}
+        animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
+        transition={{ duration: 0.5 }}
+      >
         <h5 className="text-4xl font-bold mt-4 my-2 bg-linear-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">
           Let&apos;s Connect
         </h5>
@@ -55,11 +69,16 @@ const EmailSection = () => {
           </Link>
 
         </div>
-      </div>
-      <div>
+      </motion.div>
+      <motion.div
+        initial={{ opacity: 0, x: 50 }}
+        animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
+        transition={{ duration: 0.5, delay: 0.2 }}
+      >
       
       
           <form 
+            ref={formRef}
             onSubmit={handleSubmit}
             className="flex flex-col" >
             <div className="mb-6">
@@ -121,7 +140,7 @@ const EmailSection = () => {
 
           </form>
         
-      </div>
+      </motion.div>
 
       { 
         state.succeeded && <p className="text-green-400">Thanks for reaching out! 💜</p> 

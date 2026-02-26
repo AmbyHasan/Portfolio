@@ -2,9 +2,10 @@
 import React from 'react'
 import Image from 'next/image'
 import StatCard from './StatCard'
-import { useState , useEffect } from 'react'
+import { useState , useEffect, useRef } from 'react'
 import StatCard2 from './StatCard2'
 import Link from 'next/link'
+import { motion, useInView } from 'framer-motion'
 
 
 
@@ -13,6 +14,8 @@ const ProgrammingSection = () => {
   const [stats , setStats]= useState(null);
 
   const [loading , setLoading] = useState(true);
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   useEffect(()=>{
 
@@ -32,14 +35,25 @@ const ProgrammingSection = () => {
   } , []);
     
   return (
-    <div className="min-h-screen text-white">
+    <div className="min-h-screen text-white" ref={ref}>
               <div className="md:grid md:grid-cols-2 gap-6 items-center py-6 px-1 xl:gap-10 sm:py-5 xl:px-16">
+  <motion.div
+    initial={{ opacity: 0, x: -50 }}
+    animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
+    transition={{ duration: 0.5 }}
+  >
   <Image
         src="/Knight.png" width={450} height={450} alt="knight"
         className="rounded-2xl "
         />
+  </motion.div>
 
-        <div className="mt-4 md:mt-0 text-left flex flex-col h-full">
+        <motion.div 
+          className="mt-4 md:mt-0 text-left flex flex-col h-full"
+          initial={{ opacity: 0, x: 50 }}
+          animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+        >
     <h2  className="text-4xl font-bold bg-linear-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent mb-4">Problem Solving</h2>
       <p className="text-base sm:p-0">
         I actively practice competitive programming on LeetCode with a strong focus on data structures, algorithms, and problem-solving consistency. Through disciplined practice and continuous learning, I have achieved the <span className="text-purple-500 font-bold">Knight</span> level on LeetCode.
@@ -82,7 +96,7 @@ const ProgrammingSection = () => {
     }
     </section>
 
-        </div>
+        </motion.div>
               </div>
       
     </div>

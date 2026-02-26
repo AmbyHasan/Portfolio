@@ -3,6 +3,9 @@ import React, { startTransition } from 'react'
 import Image from 'next/image'
 import {useState , useTransition} from "react"
 import TabButton from './TabButton'
+import { motion } from 'framer-motion'
+import { useInView } from 'framer-motion'
+import { useRef } from 'react'
 
 //Data to be displayed in the tabs
 const TAB_DATA=[
@@ -157,6 +160,8 @@ const AboutMeSection = () => {
   
     const [tab , setTab]= useState("skills");
     const [  isPending  , startTransition]=useTransition();
+    const ref = useRef(null);
+    const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   //for the transition when we click on skills , certification and education
   
@@ -169,13 +174,24 @@ const handleTabChange=(id)=>{
   return (
 
     // ABOUT ME
-    <div className="text-white min-h-screen ">
-      <div className="md:grid md:grid-cols-2 gap-8 items-center py-8 px-1 xl:gap-16 sm:py-16 xl:px-16">
+    <div className="text-white min-h-screen " ref={ref}>
+      <div className="md:grid md:grid-cols-2 gap-12 items-center py-8 px-1 xl:gap-16 sm:py-16 xl:px-16">
+        <motion.div
+          initial={{ opacity: 0, x: -50 }}
+          animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
+          transition={{ duration: 0.5 }}
+        >
         <Image
         src="/AboutMe.png" width={500} height={500} alt="me"
         className="rounded-2xl "
         />
-        <div className="mt-4 md:mt-0 text-left flex flex-col h-full">
+        </motion.div>
+        <motion.div 
+          className="mt-4 md:mt-0 text-left flex flex-col h-full"
+          initial={{ opacity: 0, x: 50 }}
+          animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+        >
         <h2  className="text-4xl font-bold bg-linear-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent mb-4">About Me</h2>
       <p className="text-base sm:p-0">I am a Computer Science and Engineering student at Pranveer Singh Institute of Technology (PSIT), Kanpur, with strong foundations in Data Structures and Algorithms and hands-on experience in full-stack web development. I enjoy building scalable, user-focused applications using modern technologies.
 </p>
@@ -195,7 +211,7 @@ const handleTabChange=(id)=>{
 
 
 
-</div>
+</motion.div>
       </div>
      
     </div>
