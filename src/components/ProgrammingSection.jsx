@@ -10,6 +10,7 @@ import { motion, useInView } from 'framer-motion'
 
 
 
+
 const ProgrammingSection = () => {
   const [stats , setStats]= useState(null);
 
@@ -71,7 +72,7 @@ const ProgrammingSection = () => {
 
 <section className="mt-5">
     {loading ? (
-<p className="text-xl font-bold text-green-700">Loading the stats from Leetcode</p>
+<p className="text-xl font-bold text-green-700">Loading the stats from Leetcode.....</p>
     ) : (
 
        <div>
