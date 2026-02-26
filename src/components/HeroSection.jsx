@@ -12,7 +12,7 @@ const HeroSection = () => {
       
       {/* Left Content */}
       <motion.div 
-        className="col-span-8 pl-15 pr-15 text-center justify-center items-center sm:text-left"
+        className="col-span-8 sm:pl-15 sm:pr-15 text-center sm:justify-center sm:items-center sm:text-left"
         initial={{ opacity: 0, x: -50 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.5 }}
