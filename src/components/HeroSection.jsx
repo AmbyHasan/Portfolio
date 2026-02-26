@@ -8,11 +8,11 @@ import { motion } from 'framer-motion';
 const HeroSection = () => {
     //this is the landing page of the portfolio
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-12 items-center">
+    <div className="grid grid-cols-1 lg:grid-cols-12 items-center mt-5">
       
       {/* Left Content */}
       <motion.div 
-        className="col-span-7 self-center text-center sm:text-left"
+        className="col-span-8 pl-15 pr-15 text-center justify-center items-center sm:text-left"
         initial={{ opacity: 0, x: -50 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.5 }}
@@ -25,7 +25,7 @@ const HeroSection = () => {
           transition={{ duration: 0.5, delay: 0.2 }}
         >
           <span className="text-white">Hello, I&apos;m </span>
-          <br className="sm:hidden" />
+          <br/>
           <span className="bg-linear-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent inline-block min-w-70 sm:min-w-80 lg:min-w-120">
            
 
@@ -80,7 +80,7 @@ const HeroSection = () => {
 
       {/* Right Image */}
       <motion.div 
-        className="col-span-5 flex justify-center items-center self-center"
+        className="col-span-4 flex justify-center items-center self-center"
         initial={{ opacity: 0, x: 50 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.5, delay: 0.3 }}
