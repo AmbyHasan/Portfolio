@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { motion } from 'framer-motion';
 import React from 'react'
 
@@ -7,6 +7,12 @@ const AiChatbotSection = () => {
   const [open, setOpen] = useState(false);
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState("");
+  const messagesEndRef = useRef(null);
+
+  // Auto-scroll to bottom when messages change
+  useEffect(() => {
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+  }, [messages]);
 
   async function sendMessage() {
   if (!input.trim()) return;
@@ -22,11 +28,27 @@ const AiChatbotSection = () => {
     body: JSON.stringify({ message: userMessage }),
   });
 
-  const data = await res.json();
+  let data = null;
+  try {
+    data = await res.json();
+  } catch {
+    data = null;
+  }
+
+  if (!res.ok) {
+    setMessages((prev) => [
+      ...prev,
+      {
+        role: "assistant",
+        text: data?.error || "Sorry, I ran into an issue. Please try again.",
+      },
+    ]);
+    return;
+  }
 
   setMessages((prev) => [
     ...prev,
-    { role: "assistant", text: data.reply },
+    { role: "assistant", text: data?.reply || "I could not generate a reply." },
   ]);
 }
   return (
@@ -76,6 +98,7 @@ const AiChatbotSection = () => {
                 {m.text}
               </div>
             ))}
+            <div ref={messagesEndRef} />
           </div>
 
           <div className="p-3 border-t border-gray-700 flex items-center gap-2">

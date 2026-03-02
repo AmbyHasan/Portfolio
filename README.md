@@ -1,28 +1,31 @@
-# 🌐 Portfolio Website – Next.js
+# 🌐 Portfolio Website – Next.js + AI Chatbot
 
-A modern, responsive personal portfolio website built using **Next.js (App Router)**.  
-This portfolio showcases my projects, skills, and contact information with a clean UI and smooth navigation.
-
----
+A modern, interactive personal portfolio website built using **Next.js 16** with an **AI-powered chatbot**. 
+This portfolio showcases Amber Hasan's projects, skills, LeetCode statistics, and experience with a clean UI, smooth animations, and an intelligent assistant.
 
 ## 🚀 Tech Stack
 
-- Next.js 13+ (App Router)
-- React
-- Tailwind CSS
-- JavaScript (ES6+)
-- Vercel (Deployment)
-
----
+- **Frontend**: Next.js 16 (App Router), React 19, Tailwind CSS 4, Framer Motion
+- **Backend**: Next.js API Routes (Node.js runtime)
+- **AI & APIs**: 
+  - Groq SDK (LLaMA 3.1 for chatbot)
+  - Xenova Transformers (embeddings)
+  - LeetCode Stats API
+- **Utilities**: React Type Animation, HeroIcons, PDF.js, Resend (Email)
+- **Styling**: Tailwind CSS with PostCSS
+- **Code Quality**: ESLint, Babel React Compiler
 
 ## ✨ Features
 
-- Responsive design for all screen sizes
-- Smooth section-based navigation
-- Modular and reusable components
-- Optimized performance with Next.js
-- SEO-friendly structure
-- Contact section with API route support
+- **🤖 AI Chatbot**: Intelligent assistant powered by LLaMA 3.1 that understands portfolio context and answers questions about projects, skills, and experience
+- **📊 LeetCode Integration**: Real-time LeetCode statistics fetched via external API (1000+ problems solved)
+- **✉️ Email Integration**: Contact form with email sending via Resend
+- **🎨 Smooth Animations**: Framer Motion animations and React Type Animation for engaging UI
+- **📱 Fully Responsive**: Design optimized for all screen sizes
+- **⚡ Performance Optimized**: Next.js optimization, image handling, and API caching
+- **🔄 Modular Components**: Reusable, maintainable component architecture
+- **📈 Project Showcase**: Dynamic project cards with detailed descriptions
+- **🎯 Skills Section**: Programming languages and web technologies displayed elegantly
 
 ---
 
