@@ -28,11 +28,27 @@ const AiChatbotSection = () => {
     body: JSON.stringify({ message: userMessage }),
   });
 
-  const data = await res.json();
+  let data = null;
+  try {
+    data = await res.json();
+  } catch {
+    data = null;
+  }
+
+  if (!res.ok) {
+    setMessages((prev) => [
+      ...prev,
+      {
+        role: "assistant",
+        text: data?.error || "Sorry, I ran into an issue. Please try again.",
+      },
+    ]);
+    return;
+  }
 
   setMessages((prev) => [
     ...prev,
-    { role: "assistant", text: data.reply },
+    { role: "assistant", text: data?.reply || "I could not generate a reply." },
   ]);
 }
   return (
