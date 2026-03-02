@@ -19,7 +19,7 @@ function getGroqClient() {
 }
 
 
-// 🔥 1️⃣ Query Rewriter (VERY IMPORTANT for retrieval)
+// rewriting the query
 async function rewriteQuery(groq, userMessage) {
   try {
     const res = await groq.chat.completions.create({
@@ -109,11 +109,11 @@ export async function POST(req) {
       );
     }
 
-    //  Rewrite query → then retrieve top matching chunks
+    //  rewrite the query and then retrieve the top matching chunks
     const searchQuery = await rewriteQuery(groq, message);
     const topChunks = getTopContextChunks(searchQuery || message);
 
-    //  Ask LLM with retrieved context
+    //  ask the question to the llm with the context
     try {
       const completion = await groq.chat.completions.create({
         model: "llama-3.1-8b-instant",
