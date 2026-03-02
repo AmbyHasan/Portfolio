@@ -1,0 +1,42 @@
+[
+  {
+    "id": "about",
+    "text": "Amber Hasan is a B.Tech Computer Science student (2023–2027) with a CGPA of 8.96 at Pranveer Singh Institute of Technology, Kanpur. She has strong fundamentals in Data Structures, Algorithms, and full-stack development."
+  },
+  {
+    "id": "leetcode",
+    "text": "Amber Hasan has solved over 1000 problems on LeetCode including 600+ Medium and 100+ Hard problems with a rating of 1827, demonstrating strong algorithmic and problem-solving skills."
+  },
+  {
+    "id": "skills_programming",
+    "text": "Amber is proficient in C++, C, JavaScript, TypeScript, Python, and Java with strong knowledge of Object-Oriented Programming and debugging."
+  },
+  {
+    "id": "skills_web",
+    "text": "Amber has experience with React.js, Next.js, Node.js, Express.js, MongoDB, MySQL, REST APIs, authentication systems, and scalable backend architecture."
+  },
+{
+  "id": "project_interviewx",
+  "text": "Project: InterviewX Live. Amber built an AI-powered full-stack project for real-time voice interview simulation, AI chatbot assistance, resume generation and technical assessments using Next.js, TypeScript, MongoDB and PostgreSQL."
+},
+{
+  "id": "project_blogify",
+  "text": "Project: Blogify. Amber developed a full-stack MERN blogging project with role-based access control, REST APIs, Redux Toolkit and Cloudinary media uploads."
+},
+{
+  "id": "project_bubblebrain",
+  "text": "Project: Bubble Brain. Amber created a full-stack knowledge management project using React, TypeScript and JWT authentication with protected routes."
+} ,
+  {
+    "id": "achievements",
+    "text": "Amber has participated in ISRO Hackathon, Adobe India Hackathon, and TVS E.P.I.C 7.0. She won the Hindustan Yuva Sansad Debate (2023–24)."
+  },
+  {
+    "id": "leadership",
+    "text": "Amber served as School Captain for two consecutive years and has strong communication skills demonstrated through debates, presentations, and technical discussions."
+  }  ,
+  {
+  "id": "projects_summary",
+  "text": "Projects: Amber Hasan has built multiple full-stack software projects including InterviewX Live, Blogify, and Bubble Brain. These projects demonstrate experience in AI integration, MERN stack development, authentication systems, REST APIs, database design, and scalable web application architecture."
+}
+]

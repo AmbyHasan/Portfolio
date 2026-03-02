@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { motion } from 'framer-motion';
 import React from 'react'
 
@@ -7,6 +7,12 @@ const AiChatbotSection = () => {
   const [open, setOpen] = useState(false);
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState("");
+  const messagesEndRef = useRef(null);
+
+  // Auto-scroll to bottom when messages change
+  useEffect(() => {
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+  }, [messages]);
 
   async function sendMessage() {
   if (!input.trim()) return;
@@ -76,6 +82,7 @@ const AiChatbotSection = () => {
                 {m.text}
               </div>
             ))}
+            <div ref={messagesEndRef} />
           </div>
 
           <div className="p-3 border-t border-gray-700 flex items-center gap-2">
