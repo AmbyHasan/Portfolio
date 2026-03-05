@@ -13,25 +13,32 @@ const FALLBACK_STATS = {
 
 export async function GET(){
     try{
-        //fetching the leetcode data from the api
+        //fetching the leetcode problems data from the api
         const res=await fetch(
-            `https://leetcode-stats-api.herokuapp.com/${USERNAME}`,
+            `https://alfa-leetcode-api.onrender.com/${USERNAME}/solved`,
            {
              next : {revalidate : 3600} , //cache for 1 hour
             }
         );
 
-        if (!res.ok) {
+          const globalRanking= await fetch(`https://alfa-leetcode-api.onrender.com/${USERNAME}` ,{next: {revalidate : 3600}});
+
+
+
+        if (!res.ok  || !globalRanking.ok) {
             return NextResponse.json(FALLBACK_STATS);
         }
 
         const data = await res.json();
+
+        const globalRankingdata=await globalRanking.json();
+
         return NextResponse.json({
-            totalSolved: data?.totalSolved ?? 0,
+            totalSolved: data?.solvedProblem ?? 0,
             easySolved: data?.easySolved ?? 0,
             mediumSolved: data?.mediumSolved ?? 0,
             hardSolved: data?.hardSolved ?? 0,
-            ranking: data?.ranking ?? "N/A",
+            ranking:  globalRankingdata?.ranking ?? "N/A",
         });
     }catch(error){
          return NextResponse.json(FALLBACK_STATS);
