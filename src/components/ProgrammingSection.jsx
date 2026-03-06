@@ -37,15 +37,22 @@ const ProgrammingSection = () => {
     
   return (
     <div className="min-h-screen text-white" ref={ref}>
-              <div className="md:grid md:grid-cols-2 gap-6 items-center py-6 px-1 xl:gap-10 sm:py-5 xl:px-16">
+              <div className="md:grid md:grid-cols-2 gap-6 items-center py-6 px-1 xl:gap-5 sm:py-5 xl:px-16">
   <motion.div
     initial={{ opacity: 0, x: -50 }}
     animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
     transition={{ duration: 0.5 }}
+    className="flex justify-center items-center"
   >
-  <Image
-        src="/Knight.png" width={450} height={450} alt="knight"
-        className="rounded-2xl "
+  <video
+        src="/KnightBadge.mp4" 
+        width={350} 
+        height={400} 
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="rounded-2xl shadow-2xl"
         />
   </motion.div>
 
