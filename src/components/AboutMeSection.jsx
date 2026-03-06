@@ -31,7 +31,7 @@ const TAB_DATA=[
 
       <li>
         <span className="font-semibold text-white">Databases:</span>{" "}
-        MongoDB, MySQL
+        MongoDB, MySQL, PostgreSQL
       </li>
 
       <li>
@@ -95,34 +95,34 @@ const TAB_DATA=[
     <ul className="list-disc list-inside space-y-3 text-gray-300">
       <li>
         <span className="font-semibold text-white">
-          Node.js & Express.js
+          Developing Backend Apps With NodeJs
         </span>{" "}
-        — Simplilearn{" "}   
+        — IBM{" "}   
       
         <span className="text-sm text-gray-400">
-          2025
+          2026
         </span>
       </li>
 
       <li>
         <span className="font-semibold text-white">
-          Python for Data Science
+          Object Oriented Programming(OOPs)
         </span>{" "}
-        — Infosys Springboard{" "}   
+        — TUF{" "}   
       
         <span className="text-sm text-gray-400">
-          2024
+          2026
         </span>
       </li>
 
       <li>
         <span className="font-semibold text-white">
-          HTML, CSS & JavaScript
+          DSA Basics to Advanced
         </span>{" "}
-        — Infosys Springboard{" "}  
+        — TUF{" "}  
         
         <span className="text-sm text-gray-400">
-          2024
+          2026
         </span>
       </li>
 
