@@ -175,7 +175,7 @@ const handleTabChange=(id)=>{
 
     // ABOUT ME
     <div className="text-white min-h-screen mt-10 " ref={ref}>
-      <div className="md:grid md:grid-cols-[1fr_1.5fr] gap-12 items-center px-1 xl:gap-5 sm:py-6 ">
+      <div className="md:grid md:grid-cols-[1fr_1.5fr] gap-12 items-center px-1 xl:gap-5 sm:py-6  py-5">
         <motion.div
           initial={{ opacity: 0, x: -50 }}
           animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
