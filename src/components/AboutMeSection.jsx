@@ -180,10 +180,10 @@ const handleTabChange=(id)=>{
           initial={{ opacity: 0, x: -50 }}
           animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
           transition={{ duration: 0.5 }}
-          className="flex justify-center items-center "
+          className="flex justify-center items-start h-full md:mt-0"
         >
         <Image
-        src="/chair1.jpeg" width={400} height={250} alt="me"
+        src="/chair2.jpeg" width={400} height={250} alt="me"
         className="rounded-2xl object-cover"
         />
         </motion.div>
