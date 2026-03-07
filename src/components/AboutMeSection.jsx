@@ -26,7 +26,7 @@ const TAB_DATA=[
 
       <li>
         <span className="font-semibold text-white">Backend:</span>{" "}
-        Node.js, Express.js, REST APIs, Authentication & Authorization
+        Node.js, Express.js, REST APIs, Authentication & Authorization, Inngest
       </li>
 
       <li>
