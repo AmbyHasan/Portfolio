@@ -175,19 +175,20 @@ const handleTabChange=(id)=>{
 
     // ABOUT ME
     <div className="text-white min-h-screen mt-10 " ref={ref}>
-      <div className="md:grid md:grid-cols-2 gap-12 items-center py-4 px-1 xl:gap-16 sm:py-8 xl:px-12">
+      <div className="md:grid md:grid-cols-[1fr_1.5fr] gap-12 items-center px-1 xl:gap-5 sm:py-6 py-5">
         <motion.div
           initial={{ opacity: 0, x: -50 }}
           animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
           transition={{ duration: 0.5 }}
+          className="flex justify-center items-start h-full mb-3 md:mb-0"
         >
         <Image
-        src="/AboutMe.png" width={500} height={500} alt="me"
-        className="rounded-2xl "
+        src="/chair2.jpeg" width={400} height={250} alt="me"
+        className="rounded-2xl object-cover"
         />
         </motion.div>
         <motion.div 
-          className="mt-4 md:mt-0 text-left flex flex-col h-full"
+          className=" md:mt-0 text-left flex flex-col h-full "
           initial={{ opacity: 0, x: 50 }}
           animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
           transition={{ duration: 0.5, delay: 0.2 }}
